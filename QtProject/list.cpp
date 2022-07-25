@@ -27,7 +27,7 @@ List::List(QString name, QWidget *parent) :
     _nameLayout->addWidget(_delListBtn);
     _listLayout->addLayout(_nameLayout);
     _listLayout->addWidget(_addTaskBtn);
-    _listLayout->addStretch();
+    //_listLayout->addStretch();
     setLayout(_listLayout);
 
 }

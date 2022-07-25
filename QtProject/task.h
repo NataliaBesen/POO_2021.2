@@ -26,6 +26,7 @@ private slots:
     void deleteDate();
     void deleteTask();
 
+
 private:
 
     QPushButton * _editTaskBtn;
@@ -49,6 +50,7 @@ private:
     bool _clickedChecklistBtn = false;
     bool _clickedPlayBtn = false;
     QPalette _pal;
+    static bool _timerTaskOn;
 
 };
 

@@ -20,7 +20,7 @@ public slots:
     private:
     QVBoxLayout * _checklistLayout;
     QPushButton * _addCheckboxBtn;
-    QVector <Checkbox*> _checkboxVector;
+    Checkbox *_newCheckbox;
 
 
 

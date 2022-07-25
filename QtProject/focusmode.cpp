@@ -55,16 +55,16 @@ void FocusMode::startFocus()
 
     if(i<3)
     {
-        if((operator==(_timer->getTime(),QTime(0,0,0)) )&&(_focusOn == true))
+        if((_timer->getTime().operator==(QTime(0,0,0)) )&&(_focusOn == true))
         {
-        _timer->setTime("0","2");
+        _timer->setTime("0","25");
          _focusLbl->setText("Foco!");
          _focusOn = false;
 
         }
-        if(operator==(_timer->getTime(),QTime(0,0,0))&& (_focusOn == false))
+        if(_timer->getTime().operator==(QTime(0,0,0))&& (_focusOn == false))
         {
-            _timer->setTime("0","1");
+            _timer->setTime("0","5");
             _focusLbl->setText("Intervalo!");
             _focusOn = true;
             i++;
@@ -73,14 +73,14 @@ void FocusMode::startFocus()
     }
     if(i==3)
     {
-        if((operator==(_timer->getTime(),QTime(0,0,0)) )&&(_focusOn == true))
-        _timer->setTime("0","2");
+        if((_timer->getTime().operator==(QTime(0,0,0)) )&&(_focusOn == true))
+        _timer->setTime("0","25");
          _focusLbl->setText("Foco!");
          _focusOn = false;
 
-        if(operator==(_timer->getTime(),QTime(0,0,0))&& (_focusOn == false))
+        if(_timer->getTime().operator==(QTime(0,0,0))&& (_focusOn == false))
         {
-            _timer->setTime("0","3");
+            _timer->setTime("0","15");
             _focusLbl->setText("Intervalo!");
             _focusOn = true;
         }
@@ -109,11 +109,12 @@ void FocusMode:: resetFocus()
 
 void FocusMode:: closeFocus()
 {
-    this->close();
     _instance=0;
+    this->pauseFocus();
+    this->close();
 }
 
 FocusMode::~FocusMode()
 {
-
+    this->closeFocus();
 }

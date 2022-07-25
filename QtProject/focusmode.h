@@ -3,6 +3,7 @@
 
 
 #include <QtWidgets>
+#include <QTime>
 #include "timer.h"
 
 

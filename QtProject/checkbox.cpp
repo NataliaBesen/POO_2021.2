@@ -22,7 +22,6 @@ Checkbox::Checkbox(QString text, QWidget *parent):
 
 Checkbox::~Checkbox()
 {
-
 }
 
 void Checkbox :: editText()

@@ -27,8 +27,8 @@ void Checklist :: newCheckbox()
                                              "", &ok);
     if (ok && !boxText.isEmpty())
     {
-    Checkbox *_newCheckbox = new Checkbox(boxText);
-    _checkboxVector.push_back(_newCheckbox);
+    _newCheckbox = new Checkbox(boxText);
+
 
     _checklistLayout->addWidget(_newCheckbox);
 

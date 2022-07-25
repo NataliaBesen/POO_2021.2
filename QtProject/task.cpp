@@ -1,6 +1,8 @@
 #include "task.h"
 #include <QDebug>
 
+bool Task::_timerTaskOn=false;
+
 Task::Task(QString text, QWidget *parent) :
     QWidget(parent)
 
@@ -136,7 +138,7 @@ void Task::deleteTask()
 
 void Task::setTime()
 {
-    if(!_clickedPlayBtn || operator==(_timer->getTime(),QTime(0,0,0)))
+    if(!_clickedPlayBtn || _timer->getTime().operator==(QTime(0,0,0)))
     {
     bool ok1;
     QString taskText1 = QInputDialog::getText(this, tr("Alocar Tempo"),
@@ -164,18 +166,20 @@ void Task::setTime()
 void Task::playTimer()
 
 {
-    if(!_clickedPlayBtn)
+    if(!_clickedPlayBtn && _timerTaskOn == false)
     {
-    _timer->playTimer();
-
+        _timer->playTimer();
+        _timerTaskOn = true;
+        _clickedPlayBtn=true;
+        _playTimerBtn->setText("Pause");
     }
-
-    else
+    else if (_clickedPlayBtn)
     {
-    _timer->pauseTimer();
-
+        _timer->pauseTimer();
+        _timerTaskOn = false;
+        _clickedPlayBtn=false;
+        _playTimerBtn->setText("Play");
     }
-    _clickedPlayBtn=!_clickedPlayBtn;
 }
 
 Task :: ~Task()

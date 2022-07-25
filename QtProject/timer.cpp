@@ -49,7 +49,7 @@ void Timer::pauseTimer()
 
 void Timer::updateTime()
 {
-    if(operator>(_time, QTime(0,0,0)))
+    if(_time.operator>(QTime(0,0,0)))
     {
     _time= _time.addSecs(-1);
     _timeLbl->setText(_time.toString("hh:mm:ss"));
