@@ -10,4 +10,4 @@ O usuário possuirá um quadro onde poderá incluir listas com o título que pre
 
 ### Modelagem - Diagrama de classes
 
-![Diagrama](/.../DiagramaClasses.png)
+![Diagrama](...\DiagramaClasses.png)
